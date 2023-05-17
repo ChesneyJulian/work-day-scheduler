@@ -16,6 +16,7 @@ $(function () {
     var id = $(this).attr("id").split('-')[1];
     var rowHour = parseInt(id);
     console.log(rowHour);
+    // conditional to color code depending on if current hour (hour) is <, >, or = to the rowHour
     if (hour > rowHour) {
       $(this).addClass('past');
     } else if (hour < rowHour) {
@@ -24,7 +25,7 @@ $(function () {
       $(this).addClass('present');}
 
       // retrieve events saved in local storage and set them to the value of each corresponding timeBlock
-      // timeBlock id will correspond with id key used in local storage
+      // if the id matches the parentId key used in setting local storage, the text will appear. if not, it remains blank 
     var text = JSON.parse(localStorage.getItem(id));
     $(this).children('.description').val(text);                       
   })
