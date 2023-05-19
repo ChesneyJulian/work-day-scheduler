@@ -31,8 +31,8 @@ $(function () {
  $(".saveBtn").on('click', function (event) {
   // parentId refers to id of timeBlock - this will match the id variable used to set text of each timeblock in function above
     var parentId = ($(this).parent().attr('id').split('-')[1]);
-    // must follow path from this = button to parent container to child with class of description
-    var event = ($(this).parent().children('.description').val())
+    // must follow path from this = button to sibling with class of description
+    var event = ($(this).siblings('.description').val())
     // sets parentId (will be the same as id in above function) as key and the entered text as the value within local storage
     localStorage.setItem(parentId, JSON.stringify(event));
   })
