@@ -13,7 +13,7 @@ $(function () {
     // splits id string at dash and grabs number which is at index 1
     var id = $(this).attr("id").split('-')[1];
     var rowHour = parseInt(id);
-    // conditional to color code for past, future, or present depending on if current hour (hour) is <, >, or = to the rowHour
+    // conditional to set timeBlock class to past, future, or present depending on if current hour (hour) is <, >, or = to the rowHour
     if (hour > rowHour) {
       $(this).addClass('past');
     } else if (hour < rowHour) {
